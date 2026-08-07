@@ -24,7 +24,7 @@ class Solution {
         }
        }
        dist[0][0] = 0;
-       PriorityQueue<State> minHeap = new PriorityQueue<>((a,b) -> a.currEffort - b.currEffort);
+       PriorityQueue<State> minHeap = new PriorityQueue<>((a,b) -> Integer.compare(a.currEffort , b.currEffort));
           minHeap.offer(new State(0,0,0));
         
         while(!minHeap.isEmpty()){
@@ -32,11 +32,18 @@ class Solution {
              int currEffort = state.currEffort;
              int  i = state.row;
              int j = state.col;
-           
+
+            if(i==n-1 && j==m-1){
+                return currEffort;
+            }
+              
+           if(currEffort > dist[i][j]){
+              continue;
+           }
            for(int k=0;k<4;k++){
             int newRow = i+dRow[k];
             int newCol = j+dCol[k];
-
+        
             // Boundary Check
             if(newRow < 0 || newCol < 0 || newRow >=n || newCol >= m){
                 continue;
