@@ -2,7 +2,7 @@ class Solution {
     public int findContentChildren(int[] g, int[] s) {
         int n = g.length;
         int m = s.length;
-        int ans = 0;
+        
         int i=0;
         int j=0;
         Arrays.sort(s);
@@ -11,13 +11,13 @@ class Solution {
         while(i<n && j<m){
 
             if(g[i]<=s[j]){
-               ans++;
+            
                j++;
                i++;
             }
             else
              j++;
         }
-        return ans;
+        return i;
     }
 }
