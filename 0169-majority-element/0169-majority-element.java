@@ -20,7 +20,7 @@ class Solution {
                     num = nums[i];
                 }
             }
-         //   mp.remove(mp.get(nums[i]));
+            mp.remove(nums[i]);
         }
         return num;
     }
