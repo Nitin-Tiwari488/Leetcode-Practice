@@ -1,0 +1,16 @@
+class Solution {
+    public int distributeCandies(int[] candyType) {
+        int n = candyType.length;
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0;i<n;i++){
+            if(!set.contains(candyType[i])){
+               set.add(candyType[i]);
+            }
+            
+        }
+        if(set.size() > n/2){
+            return n/2;
+        }
+        return (set.size()>(n/2)? n/2 : set.size());
+    }
+}
