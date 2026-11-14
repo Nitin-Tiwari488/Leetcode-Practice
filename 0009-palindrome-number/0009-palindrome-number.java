@@ -11,9 +11,6 @@ class Solution {
           n = n/10;
           newNum = newNum * 10 + currNum;
        }  
-       if(newNum==x){
-        return true;
-       }
-       return false;   
+       return newNum == x; 
     }
 }
